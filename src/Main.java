@@ -19,7 +19,7 @@ public class Main {
 
             System.out.println(
                     """
-                            1 - Book Car
+                            1 - Booked Car
                             2- View All User Booked Car
                             3 - View All Bookings
                             4 - View Available Cars
