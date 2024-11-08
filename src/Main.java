@@ -1,7 +1,5 @@
-import car.Car;
-import car.CarBrand;
-import car.CarData;
-import car.CarService;
+import car.*;
+import user.UserDAO;
 import user.UserService;
 
 import java.util.Arrays;
@@ -11,10 +9,13 @@ public class Main {
 
         public static void main(String[] args) {
             Scanner sc = new Scanner(System.in);
-            UserService newUserService = new UserService();
-            CarData carData = new CarData();
+            //dependency
+            UserDAO userDAO = new UserDAO();
+            CarDAO carDAO = new CarDAO();
 
-
+            //injection
+            UserService newUserService = new UserService(userDAO);
+            CarService carService = new CarService(carDAO);
 
             System.out.println(
                     """
@@ -41,10 +42,12 @@ public class Main {
                     case 4://View Available Cars
                         break;
                     case 5://View All Available Electric Cars\
-                        carData.viewElectricCars();
+                       carService.viewAvaialbleElectricCar();
+
 
                         break;
                     case 6: //View all Users
+
                         newUserService.viewAllUsers();
                         break;
                     case 7: //exit

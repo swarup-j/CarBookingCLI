@@ -1,14 +1,19 @@
 package car;
 
 public class CarDAO {
-    private int nextAvailableSlot = 0;
-    public static final int INT = 5;
-    //use is to pass data to the carservice class
-    Car[] cars = new Car[INT];
-    public void saveCar(Car car){
-        cars[nextAvailableSlot] = car;
-        nextAvailableSlot++;
+    private static Car[] cars;
+
+    static {
+        cars = new Car[]{
+                new Car(1234, 12.5f, CarBrand.AUDI, false),
+                new Car(4932, 52.5f, CarBrand.Tesla, true),
+                new Car(8952, 09.5f, CarBrand.BMW, false),
+                new Car(6509, 55.5f, CarBrand.HONDA, true)
+
+        };
     }
+
+
     public Car[] getAllCar() {
         return cars;
     }

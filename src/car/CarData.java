@@ -16,12 +16,8 @@ public class CarData {
 
         };
     }
-    CarService carService = new CarService();
 
-
-
-    public void viewElectricCars(){
-
-        carService.viewAvaialbleElectricCar();
+    public static Car[] getCars() {
+        return cars;
     }
 }
